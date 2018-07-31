@@ -31,7 +31,7 @@ def scrapping_books(phrase):
         if find_format:
         	books["format"] = find_format
 
-        print(json.dumps(books))
+        return json.dumps(books)
 
 
 #book_titles = soup.find_all('h2',class_="product-name")
