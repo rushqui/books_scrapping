@@ -38,14 +38,3 @@ def scrapping_books(phrase):
 
     return json.dumps(books)
 
-
-#book_titles = soup.find_all('h2',class_="product-name")
-#book_prices = soup.find_all('span',class_="price")
-
-#for productName in book_titles:
-#	print(productName.text)
-
-#for productPrice in book_prices:
-#	print(productPrice.text)
-
-#print name_box.text
