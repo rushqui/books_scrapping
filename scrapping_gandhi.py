@@ -4,10 +4,9 @@ from bs4 import BeautifulSoup
 from flask import Flask
 app = Flask(__name__)
 
-@app.route("/scrappingGandhi")
-def scrapping_books():
-    phrase = "delirium lauren oliver"
-    modifed_phrase = phrase.replace(" ","+")
+@app.route("/scrappingGandhi/<searchPhrase>")
+def scrapping_books(searchPhrase):
+    modifed_phrase = searchPhrase.replace(" ","+")
     quote_page = "https://busqueda.gandhi.com.mx/busca?q="+modifed_phrase
     page = urllib2.urlopen(quote_page)
 
