@@ -7,7 +7,8 @@ def scrapping_books(phrase):
     quote_page = "https://busqueda.gandhi.com.mx/busca?q="+modifed_phrase
     page = urllib2.urlopen(quote_page)
 
-    books = {}
+    books = []
+    book = {}
     soup = BeautifulSoup(page.read(),'html.parser')
     books_search = soup.find('ul',class_="products-grid")
 
@@ -24,14 +25,18 @@ def scrapping_books(phrase):
         else:
         	book_price = ("No disponible ahora") 
 
-        books["cover"] = book_image
-        books["tile"] = book_title
-        books["price"] = book_price
+        book["cover"] = book_image
+        book["tile"] = book_title
+        book["price"] = book_price
 
         if find_format:
-        	books["format"] = find_format
+        	book["format"] = find_format
 
-        return json.dumps(books)
+
+        books.append(book)
+        
+
+    return json.dumps(books)
 
 
 #book_titles = soup.find_all('h2',class_="product-name")
