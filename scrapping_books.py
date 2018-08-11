@@ -11,11 +11,11 @@ def scrapping_books(searchPhrase):
     page = urllib2.urlopen(quote_page)
 
     books = []
-    book = {}
     soup = BeautifulSoup(page.read(),'html.parser')
     books_search = soup.find('ul',class_="products-grid")
 
     for booksItems in books_search.find_all('li',class_="item"):
+        book = {}
     	find_image = booksItems.a
     	book_image = find_image.img['src']
     	book_title = booksItems.h2.text.strip()
