@@ -82,7 +82,7 @@ def scrapping_booksPorrua(searchPhrase):
 
 
 
-@app.route("/scrappingSotano/<sarchPhrase>")
+@app.route("/scrappingSotano/<searchPhrase>")
 def scrapping_booksSotano(searchPhrase):
     modifed_phrase = searchPhrase.replace(" ","+")
     quote_page = "https://www.elsotano.com/busqueda.php?q="+modifed_phrase
